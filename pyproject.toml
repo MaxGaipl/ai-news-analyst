@@ -1,0 +1,27 @@
+[project]
+name = "ai-news-analyst"
+version = "0.1.0"
+description = "AI-powered news analyst and fact checker combining intelligent web scraping with LLM analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.16.1",
+    "crawl4ai[all]>=0.4.0",
+    "fastapi>=0.115.12",
+    "feedparser>=6.0.11",
+    "pydantic-ai>=0.2.14",
+    "python-dotenv>=1.1.0",
+    "sqlalchemy[asyncio]>=2.0.41",
+    "uvicorn[standard]>=0.34.3",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "mypy>=1.16.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.0",
+    "pytest-asyncio>=1.0.0",
+    "ruff>=0.11.12",
+]

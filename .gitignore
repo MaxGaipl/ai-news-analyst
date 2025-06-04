@@ -1,0 +1,105 @@
+# =============================================================================
+# AI News Analyst - Python .gitignore
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE & Editor Files
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+
+# Project Specific
+*.db
+*.sqlite
+*.sqlite3
+data/news_analyst.db*
+logs/
+*.log
+*.log.*
+.cache/
+cache/
+data/cache/*
+!data/cache/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# API keys and secrets
+secrets/
+.secrets
+
+# OS Specific
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# Crawl4AI Specific
+.crawl4ai/
+browser_profiles/
+.playwright/
+
+# UV
+.uv/
