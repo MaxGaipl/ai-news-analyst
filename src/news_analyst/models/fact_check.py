@@ -4,7 +4,6 @@ Fact checking claim model.
 
 from enum import StrEnum
 from typing import List, Optional
-from uuid import UUID
 
 from pydantic import Field, HttpUrl, field_validator
 

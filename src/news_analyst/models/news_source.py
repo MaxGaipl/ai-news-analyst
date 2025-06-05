@@ -4,7 +4,6 @@ News source model for representing media outlets.
 
 from enum import StrEnum
 from typing import Optional, List
-from uuid import UUID
 
 from pydantic import Field, HttpUrl, field_validator
 

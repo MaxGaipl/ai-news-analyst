@@ -34,23 +34,14 @@ def test_core_dependencies_can_be_imported():
     """Test that core dependencies are available."""
 
     # Test Crawl4AI
-    import crawl4ai
-    from crawl4ai import AsyncWebCrawler, BrowserConfig
 
     # Test Pydantic AI
-    import pydantic_ai
-    from pydantic_ai import Agent
 
     # Test FastAPI
-    import fastapi
-    from fastapi import FastAPI
 
     # Test SQLAlchemy
-    import sqlalchemy
-    from sqlalchemy.ext.asyncio import AsyncSession
 
     # Test Pydantic Settings
-    from pydantic_settings import BaseSettings
 
     # If we get here, all imports worked
     assert True

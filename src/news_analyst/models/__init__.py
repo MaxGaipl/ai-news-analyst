@@ -11,7 +11,13 @@ from .base import BaseNewsModel, TimestampMixin, UUIDMixin
 from .article import Article
 from .news_source import NewsSource, BiasRating, CredibilityRating
 from .fact_check import FactCheckClaim, VerificationStatus
-from .analysis import AnalysisResult, Sentiment, SentimentLabel, BiasLabel, CredibilityLabel
+from .analysis import (
+    AnalysisResult,
+    Sentiment,
+    SentimentLabel,
+    BiasLabel,
+    CredibilityLabel,
+)
 
 __all__ = [
     # Base models and mixins

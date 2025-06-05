@@ -4,7 +4,6 @@ Article model for representing news articles.
 
 from datetime import datetime
 from typing import Optional, List
-from uuid import UUID
 
 from pydantic import Field, HttpUrl, field_validator
 
