@@ -9,7 +9,7 @@ import pytest
 
 def test_can_import_main_package():
     """Test that we can import the main package."""
-    from news_analyst import settings
+    from src.news_analyst import settings
 
     assert settings.app_name == "AI News Analyst"
     assert settings.app_version == "0.1.0"
@@ -18,7 +18,7 @@ def test_can_import_main_package():
 
 def test_settings_configuration():
     """Test that settings are properly configured."""
-    from news_analyst.config import settings
+    from src.news_analyst.config import settings
 
     # Test basic properties
     assert settings.debug is True
@@ -58,7 +58,7 @@ def test_core_dependencies_can_be_imported():
 
 def test_project_directories_exist():
     """Test that all required project directories exist."""
-    from news_analyst.config import settings
+    from src.news_analyst.config import settings
 
     # Test main data directories
     assert (settings.data_dir / "raw").exists()
