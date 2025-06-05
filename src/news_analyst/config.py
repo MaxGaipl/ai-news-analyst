@@ -5,7 +5,6 @@ Following YAGNI principles - only basic settings needed for project setup.
 More configuration will be added as features are implemented.
 """
 
-import os
 from pathlib import Path
 
 from pydantic import Field
