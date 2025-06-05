@@ -2,7 +2,7 @@
 Fact checking claim model.
 """
 
-from enum import Enum
+from enum import StrEnum
 from typing import List, Optional
 from uuid import UUID
 
@@ -11,7 +11,7 @@ from pydantic import Field, HttpUrl, field_validator
 from .base import BaseNewsModel, UUIDMixin, TimestampMixin
 
 
-class VerificationStatus(str, Enum):
+class VerificationStatus(StrEnum):
     """Status of fact check verification."""
 
     TRUE = "true"

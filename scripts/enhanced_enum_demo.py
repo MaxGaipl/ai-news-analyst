@@ -6,13 +6,13 @@ This script shows real-world scenarios where enum serialization matters.
 
 import json
 import time
-from enum import Enum
+from enum import StrEnum
 from typing import List, Dict, Any
 from pydantic import BaseModel, ConfigDict
 
 
 # Enum definitions (same as in our models)
-class BiasRating(str, Enum):
+class BiasRating(StrEnum):
     LEFT = "left"
     LEFT_CENTER = "left_center"
     CENTER = "center"
@@ -21,7 +21,7 @@ class BiasRating(str, Enum):
     UNKNOWN = "unknown"
 
 
-class CredibilityRating(str, Enum):
+class CredibilityRating(StrEnum):
     VERY_HIGH = "very_high"
     HIGH = "high"
     MIXED = "mixed"
@@ -30,7 +30,7 @@ class CredibilityRating(str, Enum):
     UNKNOWN = "unknown"
 
 
-class VerificationStatus(str, Enum):
+class VerificationStatus(StrEnum):
     PENDING = "pending"
     IN_PROGRESS = "in_progress"
     VERIFIED = "verified"

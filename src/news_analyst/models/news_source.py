@@ -2,7 +2,7 @@
 News source model for representing media outlets.
 """
 
-from enum import Enum
+from enum import StrEnum
 from typing import Optional, List
 from uuid import UUID
 
@@ -11,7 +11,7 @@ from pydantic import Field, HttpUrl, field_validator
 from .base import BaseNewsModel, UUIDMixin, TimestampMixin
 
 
-class BiasRating(str, Enum):
+class BiasRating(StrEnum):
     """Political bias rating for news sources."""
 
     LEFT = "left"
@@ -22,7 +22,7 @@ class BiasRating(str, Enum):
     UNKNOWN = "unknown"
 
 
-class CredibilityRating(str, Enum):
+class CredibilityRating(StrEnum):
     """Credibility rating for news sources."""
 
     VERY_HIGH = "very_high"

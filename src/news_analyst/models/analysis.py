@@ -3,7 +3,7 @@ Analysis result model for storing article analysis data.
 """
 
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from typing import List, Optional
 from uuid import UUID
 
@@ -13,7 +13,7 @@ from .base import BaseNewsModel, UUIDMixin, TimestampMixin
 from .fact_check import FactCheckClaim
 
 
-class SentimentLabel(str, Enum):
+class SentimentLabel(StrEnum):
     """Sentiment analysis labels."""
 
     VERY_POSITIVE = "very_positive"
