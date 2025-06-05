@@ -23,6 +23,26 @@ class SentimentLabel(StrEnum):
     VERY_NEGATIVE = "very_negative"
 
 
+class BiasLabel(StrEnum):
+    """Bias classification labels based on political lean."""
+
+    LEFT_BIAS = "left_bias"
+    LEFT_CENTER = "left_center"
+    CENTER_NEUTRAL = "center_neutral"
+    RIGHT_CENTER = "right_center"
+    RIGHT_BIAS = "right_bias"
+
+
+class CredibilityLabel(StrEnum):
+    """Credibility classification labels based on reliability."""
+
+    VERY_HIGH = "very_high"
+    HIGH = "high"
+    MIXED = "mixed"
+    LOW = "low"
+    VERY_LOW = "very_low"
+
+
 class Sentiment(BaseNewsModel):
     """Sentiment analysis result."""
 
@@ -110,31 +130,31 @@ class AnalysisResult(BaseNewsModel, UUIDMixin, TimestampMixin):
         """Ensure scores are within valid range."""
         return max(0.0, min(1.0, v))
 
-    def get_bias_label(self) -> str:
-        """Get human-readable bias label based on score."""
+    def get_bias_label(self) -> BiasLabel:
+        """Get bias classification label based on score."""
         if self.bias_score < 0.3:
-            return "Left Bias"
+            return BiasLabel.LEFT_BIAS
         elif self.bias_score < 0.4:
-            return "Left-Center"
+            return BiasLabel.LEFT_CENTER
         elif self.bias_score < 0.6:
-            return "Center/Neutral"
+            return BiasLabel.CENTER_NEUTRAL
         elif self.bias_score < 0.7:
-            return "Right-Center"
+            return BiasLabel.RIGHT_CENTER
         else:
-            return "Right Bias"
+            return BiasLabel.RIGHT_BIAS
 
-    def get_credibility_label(self) -> str:
-        """Get human-readable credibility label based on score."""
+    def get_credibility_label(self) -> CredibilityLabel:
+        """Get credibility classification label based on score."""
         if self.credibility_score >= 0.8:
-            return "Very High"
+            return CredibilityLabel.VERY_HIGH
         elif self.credibility_score >= 0.6:
-            return "High"
+            return CredibilityLabel.HIGH
         elif self.credibility_score >= 0.4:
-            return "Mixed"
+            return CredibilityLabel.MIXED
         elif self.credibility_score >= 0.2:
-            return "Low"
+            return CredibilityLabel.LOW
         else:
-            return "Very Low"
+            return CredibilityLabel.VERY_LOW
 
     def has_verified_claims(self) -> bool:
         """Check if any claims have been fact-checked."""

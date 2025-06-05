@@ -16,6 +16,8 @@ from src.news_analyst.models import (
     CredibilityRating,
     VerificationStatus,
     SentimentLabel,
+    BiasLabel,
+    CredibilityLabel,
 )
 
 
@@ -137,8 +139,8 @@ class TestAnalysisResult:
         assert result.article_id == article.id
         assert result.bias_score == 0.5
         assert result.credibility_score == 0.8
-        assert result.get_bias_label() == "Center/Neutral"
-        assert result.get_credibility_label() == "Very High"
+        assert result.get_bias_label() == BiasLabel.CENTER_NEUTRAL
+        assert result.get_credibility_label() == CredibilityLabel.VERY_HIGH
 
     def test_analysis_with_claims(self):
         """Test analysis result with fact check claims."""
